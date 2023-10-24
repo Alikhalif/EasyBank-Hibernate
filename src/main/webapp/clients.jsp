@@ -22,6 +22,8 @@
             </li>
             <li class="nav__item"><a class="nav__link" href="${pageContext.servletContext.contextPath}/clients">Clients</a></li>
             <li class="nav__item"><a class="nav__link" href="${pageContext.servletContext.contextPath}/employees">Employees</a></li>
+            <li class="nav__item"><a class="nav__link" href="${pageContext.servletContext.contextPath}/requests">Requests</a></li>
+
             <li class="nav__item">
                 <a class="nav__link nav__link--btn btn--show-modal" href="${pageContext.servletContext.contextPath}/simulations">Simulate a credit</a>
             </li>

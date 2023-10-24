@@ -1,5 +1,6 @@
 package org.youcode.easybank_hibernate.services;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import org.youcode.easybank_hibernate.dao.RequestDao;
 import org.youcode.easybank_hibernate.entities.Request;
 import org.youcode.easybank_hibernate.enums.STATE;
@@ -8,6 +9,7 @@ import jakarta.inject.Inject;
 import java.util.List;
 import java.util.Optional;
 
+@ApplicationScoped
 public class RequestService {
 
     @Inject
@@ -35,6 +37,14 @@ public class RequestService {
             return false;
         }else {
             return requestDao.updateState(number, state);
+        }
+    }
+
+    public boolean deleteRequest(Integer id) {
+        if (id.toString().isEmpty() || requestDao.findByID(id).isEmpty()) {
+            return false;
+        }else {
+            return requestDao.delete(id);
         }
     }
 

@@ -25,6 +25,8 @@
             </li>
             <li class="nav__item"><a class="nav__link" href="${pageContext.servletContext.contextPath}/employees">Employees</a>
             </li>
+            <li class="nav__item"><a class="nav__link" href="${pageContext.servletContext.contextPath}/requests">Requests</a></li>
+
             <li class="nav__item">
 
                 <a class="nav__link nav__link--btn btn--show-modal" href="${pageContext.servletContext.contextPath}/simulations">Simulate a credit</a>
@@ -38,7 +40,7 @@
 
 
     <div class="container">
-        <!--<form action="${pageContext.request.contextPath}/simulations?action=insert" method="post"> -->
+        <form action="${pageContext.request.contextPath}/simulations?action=insert" method="POST">
             <div class="sub-container">
                 <div class="top-cards-container">
                     <div class="active top-card simulation-top-card">
@@ -96,7 +98,7 @@
 
                         <div class="input-group">
                             <label class="input-label" for="monthly_payment">Monthly payment</label>
-                            <input name="monthly_payment" type="text" id="monthly_payment" disabled>
+                            <input name="monthly_payment" type="text" id="monthly_payment" readonly>
                         </div>
 
 
@@ -108,7 +110,7 @@
 
                 </div>
 
-                <div class="info-card hidden">
+                <div class="">
                     <div class="card-container">
                         <!-- <form class="info-form"> -->
                             <div class="input-group">
@@ -132,7 +134,7 @@
                             </div>
 
                             <a class="create-client-link" href="${pageContext.servletContext.contextPath}/clients">Not a client ? Be one now</a>
-                        <!-- </form> -->
+                        <!--</form>-->
 
                     </div>
 
@@ -144,7 +146,7 @@
                 </div>
 
             </div>
-        <!-- </form> -->
+        </form>
 
     </div>
 

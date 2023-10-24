@@ -34,11 +34,13 @@ const client = document.getElementById("client");
 amountInput.addEventListener("input", (event) => {
     amountValue.innerText = event.target.value;
     monthly_payment_input.value = calculateMonthlyPayment();
+    console.log(calculateMonthlyPayment());
 });
 
 monthsInput.addEventListener("input", (event) => {
     monthsValue.innerText = event.target.value;
     monthly_payment_input.value = calculateMonthlyPayment();
+    console.log(calculateMonthlyPayment());
 });
 
 nextBtn.addEventListener("click", () => {
@@ -62,7 +64,8 @@ client.addEventListener("change", () => {
 })
 const calculateMonthlyPayment = () => {
     const result =  (parseFloat(amountValue.innerText) * proportional_annual_rate / 12) / (1 - Math.pow(1 + proportional_annual_rate / 12, -parseFloat(monthsValue.innerText)));
-    return result.toFixed(2);
+    //return result.toFixed(2);
+    return result;
 }
 
 const fillCreditDetails = () => {
