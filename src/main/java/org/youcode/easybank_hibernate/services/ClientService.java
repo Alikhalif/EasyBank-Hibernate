@@ -13,11 +13,15 @@ public class ClientService {
     @Inject
     private ClientDaoImpl clientDao;
 
-    public void createClient(Client client) throws Exception {
+    public void setClientDao(ClientDaoImpl clientDao) {
+        this.clientDao = clientDao;
+    }
+
+    public Client createClient(Client client) throws Exception {
         if (client == null) {
             throw new Exception("Client cannot be null");
         }else {
-            clientDao.create(client).get();
+            return clientDao.create(client).get();
         }
     }
 
@@ -48,4 +52,6 @@ public class ClientService {
             return clientDao.update(client).get();
         }
     }
+
+
 }

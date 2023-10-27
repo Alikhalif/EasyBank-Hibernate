@@ -13,6 +13,10 @@ public class EmployeeService {
     @Inject
     private EmployeeDaoImpl employeeDao;
 
+    public void setEmployeeDao(EmployeeDaoImpl employeeDao){
+        this.employeeDao = employeeDao;
+    }
+
 
 
     public Employee createEmployee(Employee employee) throws Exception {

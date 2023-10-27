@@ -2,6 +2,7 @@ package org.youcode.easybank_hibernate.services;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import org.youcode.easybank_hibernate.dao.RequestDao;
+import org.youcode.easybank_hibernate.dao.daoImpl.RequestDaoImpl;
 import org.youcode.easybank_hibernate.entities.Request;
 import org.youcode.easybank_hibernate.enums.STATE;
 import jakarta.inject.Inject;
@@ -14,6 +15,10 @@ public class RequestService {
 
     @Inject
     private RequestDao requestDao;
+
+    public void setRequestService(RequestDaoImpl requestDao){
+        this.requestDao = requestDao;
+    }
 
     public Request createRequest(Request request) throws Exception{
         if (request == null) {
@@ -47,5 +52,6 @@ public class RequestService {
             return requestDao.delete(id);
         }
     }
+
 
 }
